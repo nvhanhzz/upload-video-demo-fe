@@ -1,0 +1,269 @@
+/* --- Style cho Modal --- */
+.modal-overlay {
+    position: fixed; /* Đặt cố định trên viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Nền đen mờ */
+    display: flex;
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center; /* Căn giữa dọc */
+    z-index: 1000; /* Đảm bảo modal hiển thị trên cùng */
+}
+
+.modal-dialog {
+    background-color: #fff; /* Nền trắng cho hộp thoại */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px; /* Chiều rộng tối đa */
+    width: 90%; /* Chiếm 90% chiều rộng trên màn hình nhỏ */
+    text-align: center; /* Căn giữa nội dung text */
+}
+
+.modal-dialog h3 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.modal-dialog p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center; /* Căn giữa các nút */
+    gap: 15px; /* Khoảng cách giữa các nút */
+}
+
+.modal-actions button {
+    /* Kế thừa style từ action-button-area */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Style cho nút "Có" (Hủy bỏ) - dùng style cancel */
+.modal-actions button.cancel-button {
+    background-color: #dc3545;
+    color: white;
+}
+.modal-actions button.cancel-button:hover {
+    background-color: #c82333;
+}
+
+/* Style cho nút "Không" - dùng style nút Chọn lại */
+.modal-actions button.select-original-button {
+    background-color: #007bff;
+    color: white;
+}
+.modal-actions button.select-original-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- Các style khác từ CSS gốc (giữ nguyên) --- */
+
+/* video-uploader-container */
+.video-uploader-container {
+    font-family: sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.video-uploader-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* file-input-area */
+.file-input-area {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    /* Align text and content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-input-area input[type="file"] {
+    display: none; /* Ẩn input mặc định */
+}
+
+.file-input-area label {
+    display: block; /* Đảm bảo label chiếm toàn bộ khu vực click */
+    cursor: pointer;
+    color: #555;
+    text-align: center; /* Căn giữa text trong label */
+    width: 100%; /* Label take full width */
+}
+
+/* Style cho thông báo hướng dẫn resume */
+.file-input-area label .resume-instruction-message {
+    display: block; /* Ensure span is on its own line */
+    margin-top: 5px;
+    font-weight: normal;
+    color: #dc3545; /* Danger color for resume message */
+    font-style: italic;
+}
+
+/* Style cho tên file đã chọn hiển thị trong label */
+.file-input-area label .selected-file-name-display {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #007bff; /* Primary color */
+}
+
+
+/* upload-button-area (updated to action-button-area) */
+.action-button-area { /* Đổi tên để chứa nhiều nút */
+    margin-bottom: 20px;
+    display: flex; /* Sử dụng flexbox để các nút cạnh nhau */
+    justify-content: center; /* Căn giữa các nút */
+    gap: 10px; /* Khoảng cách giữa các nút */
+    flex-wrap: wrap; /* Cho phép xuống dòng nếu màn hình hẹp */
+}
+
+.action-button-area button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button-area button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6; /* Giảm opacity khi disabled */
+}
+
+.action-button-area button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+/* Style cho nút Cancel */
+.action-button-area button.cancel-button {
+    background-color: #dc3545; /* Màu đỏ cho nút hủy */
+}
+
+.action-button-area button.cancel-button:hover:not(:disabled) {
+    background-color: #c82333; /* Màu đỏ đậm hơn khi hover */
+}
+
+/* Optional: Style cho nút Chọn lại (có thể giống nút thường hoặc nút hủy) */
+/* .action-button-area button.select-original-button { ... } */
+
+
+/* progress-area */
+.progress-area {
+    margin-top: 20px;
+    text-align: left;
+    padding: 15px; /* Thêm padding */
+    border: 1px solid #eee; /* Thêm border nhẹ */
+    border-radius: 5px; /* Bo góc */
+    background-color: #fff; /* Nền trắng */
+}
+
+/* Style riêng cho khu vực upload và processing nếu cần phân biệt rõ hơn */
+.progress-area.upload-progress {
+    /* Style specific to upload progress */
+}
+
+.progress-area.processing-progress {
+    /* Style specific to processing progress */
+    /* Có thể thêm border-top để tách biệt nếu cả 2 hiển thị cùng lúc */
+    border-top: 1px dashed #ccc;
+    margin-top: 15px; /* Điều chỉnh khoảng cách */
+    padding-top: 15px; /* Điều chỉnh padding trên */
+}
+
+
+.progress-area h3 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 1.1em; /* Cỡ chữ nhỏ hơn h1 */
+}
+
+.progress-bar-container {
+    margin-bottom: 15px;
+}
+
+.progress-bar-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9em; /* Cỡ chữ nhỏ hơn */
+}
+
+.progress-bar-container progress {
+    width: 100%;
+    height: 25px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Style cho thanh progress (tùy chỉnh màu sắc) */
+.progress-bar-container progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.progress-bar-container progress::-webkit-progress-value {
+    background-color: #007bff; /* Màu xanh dương cho tiến trình */
+    border-radius: 5px;
+}
+
+.progress-bar-container progress::-moz-progress-bar {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+
+/* status-message */
+.status-message {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+    text-align: center; /* Căn giữa thông báo */
+}
+
+/* Optional: Style cho trạng thái processing completed/failed */
+.status-message.completed {
+    color: #28a745; /* Green */
+    font-weight: bold;
+    font-style: normal;
+}
+.status-message.failed {
+    color: #dc3545; /* Red */
+    font-weight: bold;
+    font-style: normal;
+}
